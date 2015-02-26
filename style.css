@@ -178,6 +178,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .navbar-brand {
     font-family: "PT Sans", Arial, sans-serif;
     color: #70be3f;
+    padding: 7px 15px;
 }
 
 .navbar-default .navbar-brand:hover,
