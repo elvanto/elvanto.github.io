@@ -1,0 +1,187 @@
+---
+---
+//
+// Variables
+//
+
+// Base Colors
+$brand-grey-dark: #323232;
+$brand-grey-pale: #f3f3f3;
+$brand-grey: #555;
+$brand-grey-light: #999;
+$link: #0f89b5;
+
+// Brand Colors
+$brand-facebook: #3b5999;
+$brand-twitter: #55acee;
+$brand-instagram: #3f729b;
+$brand-youtube: #b31217;
+$brand-github: #333;
+
+// Typography
+$font: 'PT Sans', Arial, sans-serif;
+$font-size: 16px;
+
+// Dimensions
+$radius: 2px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1440px;
+
+// Objects
+$header: $brand-grey-dark;
+$status-1: #70be3f;
+$status-2: #fa8b15;
+$status-3: #e55353;
+
+
+//
+// Mixins
+//
+
+// Taste the rainbow!
+@mixin rainbow {
+	background: -webkit-gradient(linear, left top, right top,
+		color-stop(0%, rgba(255, 0, 0, 1)),
+		color-stop(15%, rgba(255, 255, 0, 1)),
+		color-stop(30%, rgba(0, 255, 0, 1)),
+		color-stop(50%, rgba(0, 255, 255, 1)),
+		color-stop(65%, rgba(0, 0, 255, 1)),
+		color-stop(80%, rgba(255, 0, 255, 1)),
+		color-stop(100%, rgba(255, 0, 0, 1))
+	);
+}
+
+
+//
+// Styles
+//
+
+*	{
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: $font;
+	font-size: $font-size;
+	line-height: 1.42857143;
+	color: $brand-grey;
+	background-color: #fff;
+}
+h1 {
+	font-size: 30px;
+	font-weight: normal;
+}
+h2 {
+	font-size: 24px;
+	font-weight: normal;
+}
+p {
+	margin: 0 0 12px;
+}
+a {
+	color: $link;
+}
+.container-fluid {
+	max-width: $screen-lg - 30px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+nav {
+	position: fixed;
+	left: 0;
+	right: 0;
+	background: fade-out($brand-grey-dark, 0.2);
+	padding: 10px 8px;
+	color: #fff;
+	z-index: 2000;
+	> div {
+		max-width: $screen-lg;
+		margin: 0 auto;
+		position: relative;
+		a {
+			&.logo {
+				img {
+					height: 33px;
+					width: auto;
+				}
+			}
+			&.back {
+				display: none;
+			}
+		}
+	}
+}
+header {
+	position: relative;
+	padding: 75px 0 25px;
+	color: #fff;
+	background: $brand-grey-dark url('../img/header-bg.jpg') center center;
+	background-size: cover;
+	> div {
+		max-width: $screen-lg;
+		margin: 0 auto;
+	}
+}
+.icon {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    font-size: 100px;
+}
+
+@media (min-width: $screen-sm) {
+
+	nav {
+		padding: 10px 12px;
+		> div {
+			a {
+				&.logo {
+					img {
+						height: 40px;
+					}
+				}
+				&.back {
+					color: #fff;
+					display: block;
+					position: absolute;
+					margin: 0;
+					top: 10px;
+					right: 12px;
+				}
+			}
+		}
+	}
+	header {
+		padding: 110px 0 50px;
+	}
+	.col {
+		width: 50%;
+	}
+}
+
+@media (min-width: $screen-md) {
+
+	nav {
+		padding: 25px 16px;
+		> div {
+			a {
+				&.logo {
+					img {
+						height: 60px;
+					}
+				}
+				&.back {
+					top: 20px;
+					right: 16px;
+				}
+			}
+		}
+	}
+	header {
+		padding: 160px 0 50px;
+	}
+
+}
